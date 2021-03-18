@@ -1,0 +1,8 @@
+  
+{
+	"name": "Hotel Check-In",
+	"description": "Hotel Check-In main page",
+	"repository": "https://git.heroku.com/checkin001.git",
+	"logo": "https://checkin001.herokuapp.com/logo.png",
+	"keywords": ["checkin"]
+}
