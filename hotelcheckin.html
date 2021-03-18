@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function getOSVersion(){
+	var el_down =  document.getElementById("mobilekeys"); 
+  	var iOS =  /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;  //navigator.userAgent //
+  	if (iOS){
+  	    el_down.innerHTML = iOS; 
+  	    
+  	}
+  	else{
+  	    el_down.innerHTML = "unknown"; 
+	}
+  	
+}
+function openMobileKeys() {
+  document.getElementById("mobilekeys").innerHTML = "Paragraph changed.";
+}
+</script>
+</head>
+<body>
+
+<h2>JavaScript in Head</h2>
+
+<p id="mobilekeys">checking os version.</p>
+
+<button type="button" onclick="getOSVersion()">Get OS</button>
+
+</body>
+</html> 
