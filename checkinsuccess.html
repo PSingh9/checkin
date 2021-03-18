@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html><html>
 
 <head>
@@ -320,6 +319,17 @@ sup {
   cursor: pointer;
 }
 </style>
+<script>
+function generateMobileKeys(){
+      var iOS =  iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;  
+      if (iOS){
+          window.webkit.messageHandlers.openMobileKeys.postMessage({param1:"stuff",param2:"1000"});
+      }
+      else{
+          window.open("https://univlink001.herokuapp.com/appstore_redirect.html?params='https://checkin001.herokuapp.com/checkinsuccess.html&appPage=MobileKey'","_self")
+   	 } 
+}
+</script>
 </head>
 <body>
 
@@ -329,7 +339,7 @@ sup {
 <p><img src="qrwiki.png" alt="iphone bordered" width = "240" height = "240"></p>
 
 <p>Alternatively, you can directly move to your room with your digital mobile keys.</p>
-<a href="https://univlink001.herokuapp.com/appstore_redirect.html?params='https://hmsweb-fauto.hms.awsdev.infor.com/web/webcheckin/#/?token=7306585984843988491&tenant=HMS_1&appPage=MobileKey" class="button">Generate Mobile Keys Here</a>
+<a href="https://univlink001.herokuapp.com/appstore_redirect.html?params='https://checkin001.herokuapp.com/checkinsuccess.html&appPage=MobileKey" class="button">Generate Mobile Keys Here</a>
 
 <p>We look forward to welcoming you on board soon.</p>
 <br>
