@@ -302,7 +302,32 @@ sup {
 		word-wrap: break-word;
 	}
 }
+.button {
+  background-color: #4CAF50;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin-left: 8px;
+  margin-right: 2px;
+  cursor: pointer;
+}
 </style>
+<script>
+function generateMobileKeys(){
+      var iOS =  iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;  
+      if (iOS){
+          window.webkit.messageHandlers.openMobileKeys.postMessage({param1:"stuff",param2:"1000"});
+      }
+      else{
+          window.open("https://univlink001.herokuapp.com/appstore_redirect.html?params='https://checkin001.herokuapp.com/home.html'","_self")
+   	 } 
+}
+</script>
 </head>
 <body>
 
@@ -314,6 +339,9 @@ sup {
 
 <p>Please click on the link below to proceed with the check-in.</p>
 <p><a href = "https://checkin001.herokuapp.com/hotelcheckin.html">Check-in here</a></p>
+
+<p>Please click here to use our app to check-in: <a href="https://univlink001.herokuapp.com/appstore_redirect.html?params='https://checkin001.herokuapp.com/home.html" class="button" onclick="generateMobileKeys()">HMS Guest Experience</a></p>
+
 <p>Regards,</p>
 <p>Susan Charles</p>
 
