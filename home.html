@@ -302,18 +302,16 @@ sup {
 		word-wrap: break-word;
 	}
 }
-
-
 .button {
   background-color: #4CAF50;
   border-radius: 8px;
   border: none;
   color: white;
-  padding: 8px 24px;
+  padding: 8px 12px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 8px;
   margin-right: 2px;
   cursor: pointer;
@@ -332,32 +330,34 @@ function isIOS() {
   // iPad on iOS 13 detection
   || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
 }
-function generateMobileKeys(){
-      var iOS =  isIOS();  
+function openCheckInScreen(){
+      var iOS = isIOS();
       if (iOS){
-          window.webkit.messageHandlers.openMobileKeys.postMessage({param1:"stuff",param2:"2000"});
+          window.webkit.messageHandlers.openCheckInScreen.postMessage({param1:"stuff",param2:"1000"});
       }
       else{
-          window.open("https://univlink001.herokuapp.com/appstore_redirect.html?params='https://checkin001.herokuapp.com/checkinsuccess.html&appPage=MobileKey'","_self")
+          window.open("https://univlink001.herokuapp.com/appstore_redirect.html?params='https://checkin001.herokuapp.com/hotelcheckin.html'","_self")
    	 } 
 }
 </script>
 </head>
 <body>
 
-<h2>Congratulations!! You are checked-in successfully.</h2>
-<p>Please show the below QR code at Front Desk to get your mobile keys.</p>
+	<p><img src="header.jpeg" alt="iphone bordered" width = "600" height = "100"></p>
 
-<p><img src="qrwiki.png" alt="iphone bordered" width = "240" height = "240"></p>
+<h2>Dear Christie, Agatha</h2>
 
-<p>Alternatively, you can directly move to your room with your digital mobile keys.</p>
-<button class="button" type="button" onclick="generateMobileKeys()">Generate Mobile Keys Here</button>
+<p>We are pleased to invite you for an online check-in.</p>
 
-<p>We look forward to welcoming you on board soon.</p>
-<br>
+<p>Please click on the link below to proceed with the check-in.</p>
+<p><a href = "https://checkin001.herokuapp.com/hotelcheckin.html">Check-in here</a></p>
+
+<p>Please click here to use our app to check-in: <button class="button" id="openCheckInScreen" type="button" onclick="openCheckInScreen()">HMS Guest Experience</button></p>
+<!-- href="https://univlink001.herokuapp.com/appstore_redirect.html?params='https://checkin001.herokuapp.com/hotelcheckin.html'"  -->
 <p>Regards,</p>
 <p>Susan Charles</p>
 
+<p><img src="footer.jpeg" alt="iphone bordered" height = "100" width = "600"></p>
 
 </body>
 
