@@ -338,12 +338,12 @@ function isBrowser(){
 }
 function openCheckInScreen(){
       var iOS = isIOS();
-      if (iOS && !isBrowser()){
-          window.webkit.messageHandlers.openCheckInScreen.postMessage({param1:"stuff",param2:"1000"});
-      }
-      else{
+//       if (iOS && !isBrowser()){
+//           window.webkit.messageHandlers.openCheckInScreen.postMessage({param1:"stuff",param2:"1000"});
+//       }
+//       else{
           window.open("https://univlink001.herokuapp.com/appstore_redirect.html?params='https://checkin001.herokuapp.com/hotelcheckin.html'","_self")
-   	 } 
+//    	 } 
 }
 </script>
 </head>
