@@ -330,9 +330,15 @@ function isIOS() {
   // iPad on iOS 13 detection
   || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
 }
+function isBrowser(){
+	var userAgent = window.navigator.userAgent.toLowerCase();
+    safari = /safari/.test( userAgent );
+    return safari;
+    
+}
 function openCheckInScreen(){
       var iOS = isIOS();
-      if (iOS){
+      if (iOS && !isBrowser()){
           window.webkit.messageHandlers.openCheckInScreen.postMessage({param1:"stuff",param2:"1000"});
       }
       else{
