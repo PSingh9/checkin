@@ -320,10 +320,22 @@ sup {
 }
 </style>
 <script>
+function isIOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}
 function generateMobileKeys(){
-      var iOS =  iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;  
+      var iOS =  isIOS();  
       if (iOS){
-          window.webkit.messageHandlers.openMobileKeys.postMessage({param1:"stuff",param2:"1000"});
+          window.webkit.messageHandlers.openMobileKeys.postMessage({param1:"stuff",param2:"2000"});
       }
       else{
           window.open("https://univlink001.herokuapp.com/appstore_redirect.html?params='https://checkin001.herokuapp.com/checkinsuccess.html&appPage=MobileKey'","_self")
@@ -339,7 +351,7 @@ function generateMobileKeys(){
 <p><img src="qrwiki.png" alt="iphone bordered" width = "240" height = "240"></p>
 
 <p>Alternatively, you can directly move to your room with your digital mobile keys.</p>
-<a href="https://univlink001.herokuapp.com/appstore_redirect.html?params='https://checkin001.herokuapp.com/checkinsuccess.html&appPage=MobileKey'" class="button" onclick="generateMobileKeys()">Generate Mobile Keys Here</a>
+<button class="button" type="button" onclick="generateMobileKeys()">Generate Mobile Keys Here</button>
 
 <p>We look forward to welcoming you on board soon.</p>
 <br>
